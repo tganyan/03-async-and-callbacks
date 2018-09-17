@@ -1,47 +1,56 @@
-![CF](http://i.imgur.com/7v5ASc8.png) 03: Asynchronous Callbacks
-===
+# Async and Callback
 
-## Submission Instructions
-* Work in a fork of this repository
-* Work in a branch on your fork
-* Open a pull request to your master branch
-* Submit on canvas a question and observation, how long you spent, and a link to your pull request
+This is a project for understanding and working with async and the event loop. Using file system, I am attempting to read and return the contents of text files based on certain parameters. In addition, I am attempting to return them in the desired order asynchronously. 
 
-## Resources
-* [fs module docs](https://nodejs.org/api/fs.html)
+## Getting Started
 
-## Configuration
-Configure the root of your repository with the following files and directories. Thoughfully name and organize any aditional configuration or module files.
-* **README.md** - contains documentation
-* **.gitignore** - contains a [robust](http://gitignore.io) `.gitignore` file
-* **.eslintrc** - contains the course linter configuratoin
-* **.eslintignore** - contains the course linter ignore configuration
-* **.travis.yml** - contains your travis testing instructions
-* **package.json** - contains npm package config 
-  * jest and eslint must be dependencies
-  * create a `lint` script for running eslint `"lint": "eslint **/.js"`
-  * create a `test` script for running tests
-* **lib/** - contains module definitions
-* **data/** - contains the text files used by the program
-* **\_\_test\_\_/** - contains unit tests
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-## Testing
-##### File Reader Module Tests
-* Use `describe` and `it` (or `test`) methods to define descriptive tests and increase readability
-* Each `it` callback should aim to test a small, well defined, feature of a function
-* Write tests to ensure that the reader function rejects errors with invalid file paths
-* Write tests to ensure that the reader function correctly resolves mapped string data for an array of file paths
+### Prerequisites
 
-## Feature Tasks
-##### File Reader Module
-In the lib/ directory create a `reader.js` module that exports a single function. The reader module should take an array of three file paths and resolve a mapped array of strings loaded from each file using an error-first callback. The string data should be in the same order as the file path data (mapped). If an error occurs, it should immediately reject the error using the callback and stop execution.
+You must have NodeJS installed along with either NPM or Yarn.
 
-* The file reader module should have the function signature `(paths, callback) => undefined`
-* On failure, the file reader module should invoke the callback with an error `callback(error)`
-* On success, the file reader module should invoke the callback with `null` as the first parameter and the result as the second parameter - `callback(null, result)`
+### Installing
 
-##### Stretch
-Write the file reader function recursively so that it will be able to support 0 or more paths.
+Copy the link from the github repository
+In the command line, navigate to the parent directory where you want to store this project
+In the command line, type:
+```
+git clone <repository url>
+```
+Once the project files are there, type:
+```
+npm install
+```
+or (if you have yarn installed)
+```
+yarn i
+```
 
-##  Documentation
-In your README.md describe the exported values of each module you have defined. Every function description should include it's airty (expected number of parameters), the expected data for each paramiter (data-type and limitations), and it's behavior (for both valid and invalued use). Feel free to write any additional information in your README.md.
+## Running the tests
+
+There are three tests for this program:
+
+1. A test to ensure the correct amount of characters are returned according to the provided argument.
+2. A test to ensure an array is returned as the output.
+3. A test to ensure the items are being returned in the expected order.
+
+To run the tests, from the command line type:
+```
+npm run test
+```
+
+## Built With
+
+* [NodeJS](https://nodejs.org) - The javascript runtime used
+* [Jest](https://jestjs.io/) - Testing platform used
+* [Eslint](https://eslint.org/) - Coding style linter
+* [FIle System](https://nodejs.org/api/fs.html) - NPM package for reading files
+
+## Authors
+
+*  [**Tyler Anyan**](http://tyleranyan.com/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
